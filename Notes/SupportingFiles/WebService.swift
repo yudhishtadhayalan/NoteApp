@@ -9,7 +9,7 @@ import Foundation
 var isPutWithBody = false
 
 
-func getttWebService(str_methodName: String, callBack: @escaping([String: String]) -> Void) {
+func getttWebService(str_methodName: String, callBack: @escaping([[String : Any]]) -> Void) {
     
     if(!Reachability.isConnectedToNetwork()){
         Utility.showAlert(str_title: EnumAlertMessage.Oops.rawValue, str_msg: EnumAlertMessage.noInternetMsg.rawValue, alertType: 0){_ in
@@ -53,8 +53,10 @@ func getttWebService(str_methodName: String, callBack: @escaping([String: String
             }
             return
         }
-      //  print("json:- \(json)")
+        print("json:- \(json)")
         DispatchQueue.main.sync {
+            callBack(json as! [[String : Any]])
+//            callBack(json as! [String : String])
 //            callBack(json as! [String : String]) //as! [String : Any])
         }
     }

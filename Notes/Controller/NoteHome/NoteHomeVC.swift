@@ -114,7 +114,7 @@ extension NoteHomeVC {
 
 //MARK: - API CALL --------------------------
 extension NoteHomeVC: DelegateLogin {
-    func successLoginObj(resObj: LoginModelElement) {
+    func successLoginObj(resObj: [LoginModelElement]) {
         print("Success: - \(resObj)")
 
 
@@ -122,6 +122,7 @@ extension NoteHomeVC: DelegateLogin {
     
     func errorLoginObj(strError: String) {
         print("ErrLogin:- \(strError)")
+        
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Login
 protocol DelegateLogin: AnyObject {
-    func successLoginObj(resObj: LoginModelElement)
+    func successLoginObj(resObj: [LoginModelElement])
     func errorLoginObj(strError: String)
 }
 
@@ -27,7 +27,7 @@ class VMLogin {
                     
             do{
                 let data_ = try JSONSerialization.data(withJSONObject:resultObj , options: .prettyPrinted)
-                let loginObj = try? JSONDecoder().decode(LoginModelElement.self, from: data_)
+                let loginObj = try? JSONDecoder().decode([LoginModelElement].self, from: data_)
                 
                 guard loginObj != nil else {
                     delegateLogin?.errorLoginObj(strError: EnumAlertMessage.jsonError.rawValue)
