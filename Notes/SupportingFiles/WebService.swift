@@ -53,7 +53,7 @@ func getttWebService(str_methodName: String, callBack: @escaping([[String : Any]
             }
             return
         }
-        print("json:- \(json)")
+//        print("json:- \(json)")
         DispatchQueue.main.sync {
             callBack(json as! [[String : Any]])
 //            callBack(json as! [String : String])
