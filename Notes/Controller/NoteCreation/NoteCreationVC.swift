@@ -23,7 +23,6 @@ class NoteCreationVC: UIViewController {
         super.viewDidLoad()
         initialSetup()
     }
-    
   
     func initialSetup() {
         imageViewOutlet.image = nil
@@ -174,30 +173,19 @@ extension NoteCreationVC: UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
-    
-    
-    
 }
 
 extension NoteCreationVC: UITableViewDelegate {
-    
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected")
     }
-    
 }
-
-
-
-
 
 //MARK: - Tool Bar change Batter and Time color --------------------------
 extension NoteCreationVC {
-
     override var preferredStatusBarStyle: UIStatusBarStyle {
             return .lightContent
     }
-    
 }
 
 extension NoteCreationVC : UITextFieldDelegate {
@@ -253,10 +241,6 @@ extension NoteCreationVC: ExpandingTableViewCellContentDelegate {
     }
 }
 
-
-
-
-
 @IBDesignable class ZeroPaddingTextView: UITextView {
 
     override func layoutSubviews() {
@@ -266,8 +250,6 @@ extension NoteCreationVC: ExpandingTableViewCellContentDelegate {
     }
     
 }
-
-
 
 extension String {
     func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {

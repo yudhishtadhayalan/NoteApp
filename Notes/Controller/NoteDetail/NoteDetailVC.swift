@@ -13,6 +13,9 @@ class NoteDetailVC: UIViewController {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var btnBack: UIButton!
     
+    var valuePassSelectedItem: Int?
+    var modelNoteModelElement: [NoteModelElement]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
@@ -41,16 +44,19 @@ extension NoteDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let item_ = modelNoteModelElement?[valuePassSelectedItem ?? 0]
+        
         if indexPath.row == 0 {
-            
+                    
             let headerCell = tableView.dequeueReusableCell(withIdentifier: "NoteDetailHeaderCell") as! NoteDetailHeaderCell
-            headerCell.lblHeading.text = "Heading"
+            headerCell.lblHeading.text = item_?.title
+            headerCell.lblDate.text = item_?.time
             return headerCell
             
         } else {
             
             let contentCell = tableView.dequeueReusableCell(withIdentifier: "NoteDetailTableCell") as! NoteDetailTableCell//tableView.dequeueReusableHeaderFooterView(withIdentifier: "NoteDetailHeaderCell") as! NoteDetailHeaderCell
-            contentCell.lblContent.text = "The foundation regularly organises gatherings (sathsangs) with Sadhguru in the Indian states of Tamil Nadu and Karnataka, where he delivers discourses, leads meditations, and conducts question-answer sessions.[14] It also organises annual pilgrimages (yatras) to Mount Kailash and the Himalayas. The Kailash pilgrimage led by Sadhguru is among the largest groups to visit Kailash, with 514 pilgrims making the journey in 2010.[15][16]"
+            contentCell.lblContent.text = item_?.body
             return contentCell
             
         }

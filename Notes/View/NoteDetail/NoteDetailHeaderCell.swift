@@ -10,7 +10,8 @@ import UIKit
 class NoteDetailHeaderCell: UITableViewCell {
     
     @IBOutlet weak var lblHeading: UILabel!
-
+    @IBOutlet weak var lblDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

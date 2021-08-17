@@ -245,6 +245,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.13725438710000001" green="0.13725152609999999" blue="0.1372551024" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
+                                            <outlet property="lblDate" destination="veU-sP-XWO" id="nuD-9N-ooe"/>
                                             <outlet property="lblHeading" destination="WpY-Sk-nDI" id="tgv-HQ-0Zi"/>
                                         </connections>
                                     </tableViewCell>
@@ -397,7 +398,7 @@
                                                     </constraints>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="6oA-bJ-Gl8" id="Pge-zx-Cma"/>
                                                         <outlet property="pasteDelegate" destination="6oA-bJ-Gl8" id="xBX-Fe-JLl"/>
@@ -433,7 +434,7 @@
                                                     </constraints>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="6oA-bJ-Gl8" id="dmv-2N-TDr"/>
                                                         <outlet property="pasteDelegate" destination="6oA-bJ-Gl8" id="I66-i5-dye"/>

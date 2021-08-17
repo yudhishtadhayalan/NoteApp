@@ -71,6 +71,8 @@ extension NoteHomeVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "NoteDetailVC") as! NoteDetailVC
+        vc.valuePassSelectedItem = indexPath.item
+        vc.modelNoteModelElement = modelNoteModelElement
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
