@@ -3,11 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		05B80798620AEF2F87FD589E /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B20050D8CD63828F4421CDF /* Pods_Notes.framework */; };
+		2DE26A7B26CC3420001268CA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE26A7526CC3420001268CA /* CoreDataManager.swift */; };
+		2DE26A7C26CC3420001268CA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DE26A7626CC3420001268CA /* DataModel.xcdatamodeld */; };
+		2DE26A7D26CC3420001268CA /* DataBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE26A7826CC3420001268CA /* DataBridge.swift */; };
+		2DE26A7E26CC3420001268CA /* NotificationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE26A7A26CC3420001268CA /* NotificationWorker.swift */; };
+		2DE26A8126CC34A9001268CA /* NotificationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE26A8026CC34A9001268CA /* NotificationEntity+CoreDataClass.swift */; };
+		2DE26A8326CC34AF001268CA /* NotificationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE26A8226CC34AF001268CA /* NotificationEntity+CoreDataProperties.swift */; };
+		2DE26A8526CC34F7001268CA /* CustomOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE26A8426CC34F7001268CA /* CustomOperationQueue.swift */; };
+		2DE26A8726CC3520001268CA /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE26A8626CC3520001268CA /* NotificationModel.swift */; };
 		A596AC31996A3F4B99801633 /* Pods_NotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F79FA81362DD9C1F8F3D634 /* Pods_NotesTests.framework */; };
 		C3B00C738FE28F1CF2690072 /* Pods_Notes_NotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F19EF8F2F7706D2C431E8D /* Pods_Notes_NotesUITests.framework */; };
 		D41353FE26C81E44000D298E /* NoteDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41353FD26C81E44000D298E /* NoteDetailTableCell.swift */; };
@@ -15,7 +23,6 @@
 		D48CD06626B34930001B50F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48CD06526B34930001B50F6 /* AppDelegate.swift */; };
 		D48CD06826B34930001B50F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48CD06726B34930001B50F6 /* SceneDelegate.swift */; };
 		D48CD06D26B34930001B50F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48CD06B26B34930001B50F6 /* Main.storyboard */; };
-		D48CD07026B34930001B50F6 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D48CD06E26B34930001B50F6 /* Notes.xcdatamodeld */; };
 		D48CD07226B34931001B50F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48CD07126B34931001B50F6 /* Assets.xcassets */; };
 		D48CD07526B34931001B50F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48CD07326B34931001B50F6 /* LaunchScreen.storyboard */; };
 		D48CD08026B34931001B50F6 /* NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48CD07F26B34931001B50F6 /* NotesTests.swift */; };
@@ -54,6 +61,14 @@
 
 /* Begin PBXFileReference section */
 		1B20050D8CD63828F4421CDF /* Pods_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DE26A7526CC3420001268CA /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		2DE26A7726CC3420001268CA /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		2DE26A7826CC3420001268CA /* DataBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBridge.swift; sourceTree = "<group>"; };
+		2DE26A7A26CC3420001268CA /* NotificationWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationWorker.swift; sourceTree = "<group>"; };
+		2DE26A8026CC34A9001268CA /* NotificationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2DE26A8226CC34AF001268CA /* NotificationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2DE26A8426CC34F7001268CA /* CustomOperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperationQueue.swift; sourceTree = "<group>"; };
+		2DE26A8626CC3520001268CA /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		38A505F4D337F182E0DA1B78 /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
 		54F19EF8F2F7706D2C431E8D /* Pods_Notes_NotesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes_NotesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		602BD005C2265DA90BA3BE3A /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,7 +82,6 @@
 		D48CD06526B34930001B50F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D48CD06726B34930001B50F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D48CD06C26B34930001B50F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D48CD06F26B34930001B50F6 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		D48CD07126B34931001B50F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D48CD07426B34931001B50F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D48CD07626B34931001B50F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,6 +135,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DE26A7426CC3420001268CA /* StorageData */ = {
+			isa = PBXGroup;
+			children = (
+				2DE26A7F26CC3481001268CA /* Entities */,
+				2DE26A8426CC34F7001268CA /* CustomOperationQueue.swift */,
+				2DE26A7526CC3420001268CA /* CoreDataManager.swift */,
+				2DE26A7626CC3420001268CA /* DataModel.xcdatamodeld */,
+				2DE26A7826CC3420001268CA /* DataBridge.swift */,
+				2DE26A7926CC3420001268CA /* Workers */,
+			);
+			path = StorageData;
+			sourceTree = "<group>";
+		};
+		2DE26A7926CC3420001268CA /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				2DE26A7A26CC3420001268CA /* NotificationWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		2DE26A7F26CC3481001268CA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2DE26A8226CC34AF001268CA /* NotificationEntity+CoreDataProperties.swift */,
+				2DE26A8026CC34A9001268CA /* NotificationEntity+CoreDataClass.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		93FC613CDEBAC149DA2E0942 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +185,6 @@
 				787D001F848EF5C0970DAE3C /* Pods-NotesTests.debug.xcconfig */,
 				D752345AE7D629AEF95CC51C /* Pods-NotesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -183,6 +226,7 @@
 				D4B3432326B3806E0033686F /* Model */,
 				D4B3432126B3806E0033686F /* View */,
 				D4B3432226B3806E0033686F /* ViewModel */,
+				2DE26A7426CC3420001268CA /* StorageData */,
 				D4B3432026B3806E0033686F /* SupportingFiles */,
 				D48CD06526B34930001B50F6 /* AppDelegate.swift */,
 				D48CD06726B34930001B50F6 /* SceneDelegate.swift */,
@@ -190,7 +234,6 @@
 				D48CD07126B34931001B50F6 /* Assets.xcassets */,
 				D48CD07326B34931001B50F6 /* LaunchScreen.storyboard */,
 				D48CD07626B34931001B50F6 /* Info.plist */,
-				D48CD06E26B34930001B50F6 /* Notes.xcdatamodeld */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -314,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F01A0726B434D5003868DF /* NoteVM.swift */,
+				2DE26A8626CC3520001268CA /* NotificationModel.swift */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -557,23 +601,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F01A2A26B43718003868DF /* Utility.swift in Sources */,
+				2DE26A7C26CC3420001268CA /* DataModel.xcdatamodeld in Sources */,
 				D4B3433B26B38B080033686F /* NoteCreationVC.swift in Sources */,
 				D4F01A0826B434D5003868DF /* NoteVM.swift in Sources */,
+				2DE26A7E26CC3420001268CA /* NotificationWorker.swift in Sources */,
+				2DE26A7B26CC3420001268CA /* CoreDataManager.swift in Sources */,
 				D48CD06626B34930001B50F6 /* AppDelegate.swift in Sources */,
+				2DE26A8126CC34A9001268CA /* NotificationEntity+CoreDataClass.swift in Sources */,
 				D4B3432E26B38AC20033686F /* NoteHomeVC.swift in Sources */,
 				D4B3434F26B38F530033686F /* NoteHomeCollectionCell.swift in Sources */,
 				D4F01A1026B435F0003868DF /* NoteModel.swift in Sources */,
 				D413540326C8206A000D298E /* NoteDetailHeaderCell.swift in Sources */,
 				D4F01A2026B436CD003868DF /* WebService.swift in Sources */,
+				2DE26A8726CC3520001268CA /* NotificationModel.swift in Sources */,
 				D48CD06826B34930001B50F6 /* SceneDelegate.swift in Sources */,
 				D4F01A1B26B436AF003868DF /* Reachability.swift in Sources */,
 				D4F01A2526B436F4003868DF /* Constant.swift in Sources */,
 				D4F019F626B422CC003868DF /* NoteHomeCollectionReusableVwHeader.swift in Sources */,
 				D4B8F10826C88EF500761A84 /* NoteCreationTitleCell.swift in Sources */,
-				D48CD07026B34930001B50F6 /* Notes.xcdatamodeld in Sources */,
 				D4B3433626B38ADE0033686F /* NoteDetailVC.swift in Sources */,
 				D4FA14CD26C8EA4B0053290B /* NoteCreationContentCell.swift in Sources */,
+				2DE26A8326CC34AF001268CA /* NotificationEntity+CoreDataProperties.swift in Sources */,
 				D41353FE26C81E44000D298E /* NoteDetailTableCell.swift in Sources */,
+				2DE26A8526CC34F7001268CA /* CustomOperationQueue.swift in Sources */,
+				2DE26A7D26CC3420001268CA /* DataBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -916,13 +967,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D48CD06E26B34930001B50F6 /* Notes.xcdatamodeld */ = {
+		2DE26A7626CC3420001268CA /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D48CD06F26B34930001B50F6 /* Notes.xcdatamodel */,
+				2DE26A7726CC3420001268CA /* DataModel.xcdatamodel */,
 			);
-			currentVersion = D48CD06F26B34930001B50F6 /* Notes.xcdatamodel */;
-			path = Notes.xcdatamodeld;
+			currentVersion = 2DE26A7726CC3420001268CA /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
