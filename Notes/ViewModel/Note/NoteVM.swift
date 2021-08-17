@@ -8,34 +8,34 @@
 import Foundation
 
 
-// MARK: - Login
-protocol DelegateLogin: AnyObject {
-    func successLoginObj(resObj: [LoginModelElement])
-    func errorLoginObj(strError: String)
+// MARK: - Note
+protocol DelegateNote: AnyObject {
+    func successNoteObj(resObj: [NoteModelElement])
+    func errorNoteObj(strError: String)
 }
 
 
-class VMLogin {
+class VMNote {
     
-    static weak var delegateLogin: DelegateLogin?
+    static weak var delegateNote: DelegateNote?
     
-    //MARK:- Login
+    //MARK:- Note
     
-    static func getLoginDetails() {
+    static func getNoteDetails() {
         
-        getttWebService(str_methodName: EnumMethodName.API_Login.rawValue) { resultObj in
+        getttWebService(str_methodName: EnumMethodName.API_Note.rawValue) { resultObj in
                     
             do{
                 let data_ = try JSONSerialization.data(withJSONObject:resultObj , options: .prettyPrinted)
-                let loginObj = try? JSONDecoder().decode([LoginModelElement].self, from: data_)
+                let NoteObj = try? JSONDecoder().decode([NoteModelElement].self, from: data_)
                 
-                guard loginObj != nil else {
-                    delegateLogin?.errorLoginObj(strError: EnumAlertMessage.jsonError.rawValue)
+                guard NoteObj != nil else {
+                    delegateNote?.errorNoteObj(strError: EnumAlertMessage.jsonError.rawValue)
                     return
                 }
                                 
                 DispatchQueue.main.async {
-                    delegateLogin?.successLoginObj(resObj: loginObj!)
+                    delegateNote?.successNoteObj(resObj: NoteObj!)
                 }
                 
             }catch(let err_){
@@ -43,7 +43,7 @@ class VMLogin {
                 let data_err = try? JSONSerialization.data(withJSONObject:resultObj , options: .prettyPrinted)
                 
                 guard (data_err != nil) else {
-                    delegateLogin?.errorLoginObj(strError: err_.localizedDescription)
+                    delegateNote?.errorNoteObj(strError: err_.localizedDescription)
                     return
                 }
                 
@@ -59,8 +59,8 @@ class VMLogin {
 
 // Common Error Message for API
 
-// MARK: - APILoginErrorObj
-struct APILoginErrorObj: Codable {
+// MARK: - APINoteErrorObj
+struct APINoteErrorObj: Codable {
     var statusCode: Int?
     var error, message, responseType: String?
 }

@@ -19,7 +19,7 @@ let BaseURL = EnumBaseURLType.Dev.rawValue
 
 //API Method Name
 enum EnumMethodName: String {
-    case API_Login = "/RishabhRaghunath/JustATest/master/posts"
+    case API_Note = "/RishabhRaghunath/JustATest/master/posts"
 }
 
 

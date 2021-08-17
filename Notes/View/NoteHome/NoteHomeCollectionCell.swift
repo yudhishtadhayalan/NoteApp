@@ -12,7 +12,7 @@ class NoteHomeCollectionCell: UICollectionViewCell {
     @IBOutlet weak var viewBg: UIView!
     @IBOutlet weak var lblHeading: UILabel!
     @IBOutlet weak var lblDate: UILabel!
-    
+        
     override func awakeFromNib() {
         basicSetup()
     }
