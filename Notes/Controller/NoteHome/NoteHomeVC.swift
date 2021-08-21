@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Foundation
+import CoreData
 
 class NoteHomeVC: UIViewController {
     
@@ -113,9 +115,55 @@ extension NoteHomeVC {
 //MARK: - API CALL --------------------------
 extension NoteHomeVC: DelegateNote {
     func successNoteObj(resObj: [NoteModelElement]) {
-        print("Success: ❄️❄️❄️❄️❄️❄️❄️- \(resObj) ❄️❄️❄️❄️❄️❄️❄️")
+        saveUserData(resObj)
+        showUserData()
         modelNoteModelElement = resObj
         collectionVwNotes.reloadData()
+    }
+
+    func saveUserData(_ users: [NoteModelElement]) {
+        let dataManager = CoreDataManager.shared
+
+        let context =  dataManager.persistentContainer.viewContext
+        for user in users {
+            let newUser = NotificationEntity(context: context)
+            newUser.id = user.id
+            newUser.title = user.title
+            newUser.body = user.body
+            newUser.time = user.time ?? ""
+            newUser.image = user.image
+        }
+        do {
+            try context.save()
+            print("Success")
+
+        } catch {
+            print("Error saving: \(error)")
+        }
+    }
+
+
+    func showUserData() {
+        print("Fetching Data..")
+        let dataManager = CoreDataManager.shared
+
+        let context =  dataManager.persistentContainer.viewContext
+
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "NotificationEntity")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+
+
+                let userName = data.value(forKey: "id") as! String
+
+                print("User Name is : "+userName+" and Age is :)")
+            }
+        } catch {
+            print("Fetching data Failed")
+        }
+
     }
     
     func errorNoteObj(strError: String) {

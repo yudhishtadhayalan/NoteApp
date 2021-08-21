@@ -7,10 +7,22 @@
 
 import Foundation
 
-// MARK: - NoteModel
-struct NoteModelElement: Codable {
-    var id, title, body, time: String?
-    var image: String?
-}
+final class NoteModelElement: Codable {
+    let id: String
+    let title: String
+    let body: String
+    let time: String?
+    let image: String?
 
-typealias NoteModel = [NoteModelElement]
+    init(id: String,
+         title: String,
+         body: String,
+         time: String,
+         image: String?) {
+        self.id = id
+        self.title = title
+        self.body = body
+        self.time = time
+        self.image = image
+    }
+}
