@@ -55,9 +55,7 @@ extension NoteHomeVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoteHomeCollectionCell", for: indexPath) as! NoteHomeCollectionCell
-            
         let item_ = modelNoteModelElement?[indexPath.item]
-        
         cell.lblHeading.text = item_?.title
         cell.viewBg.backgroundColor = self.arrayColor[indexPath.row % self.arrayColor.count]
         cell.lblDate.text = item_?.time
