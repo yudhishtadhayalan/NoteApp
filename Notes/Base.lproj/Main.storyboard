@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QwP-jW-eOF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QwP-jW-eOF">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -192,7 +192,7 @@
                                 <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoteDetailHeaderCell" rowHeight="106" id="hh0-hI-cuA" customClass="NoteDetailHeaderCell" customModule="Notes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="106"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hh0-hI-cuA" id="Jy2-1I-SdB">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
@@ -234,7 +234,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoteDetailTableCell" rowHeight="74" id="qnA-Qd-Lyb" customClass="NoteDetailTableCell" customModule="Notes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="134" width="414" height="74"/>
+                                        <rect key="frame" x="0.0" y="130.33333396911621" width="414" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qnA-Qd-Lyb" id="wIu-Nf-R5o">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
@@ -378,7 +378,7 @@
                                 <color key="backgroundColor" red="0.1098034754" green="0.1098010167" blue="0.1098040715" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoteCreationTitleCell" id="As2-4b-ycq" customClass="NoteCreationTitleCell" customModule="Notes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="91.333335876464844"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="91.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="As2-4b-ycq" id="VYe-eC-OEU">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="91.333335876464844"/>
@@ -414,7 +414,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoteCreationContentCell" rowHeight="146" id="5Qg-AA-8Gw" customClass="NoteCreationContentCell" customModule="Notes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="119.33333587646484" width="414" height="146"/>
+                                        <rect key="frame" x="0.0" y="115.66666984558105" width="414" height="146"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Qg-AA-8Gw" id="ZND-Ji-VzF">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>

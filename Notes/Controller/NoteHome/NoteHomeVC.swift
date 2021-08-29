@@ -16,7 +16,7 @@ class NoteHomeVC: UIViewController {
     @IBOutlet weak var btnEdit: UIButton!
     @IBOutlet weak var lblTitle: UILabel!
     
-    var modelNoteModelElement: [NoteModelElement]!
+    var modelNoteModelElement = [NoteModelElement]()
     var arrayColor = [#colorLiteral(red: 1, green: 0.6369444728, blue: 0.5204316378, alpha: 1), #colorLiteral(red: 1, green: 0.7903530002, blue: 0.3777176142, alpha: 1), #colorLiteral(red: 0.8730370402, green: 0.9477366805, blue: 0.5035483241, alpha: 1), #colorLiteral(red: 0, green: 0.8953368068, blue: 0.9356026649, alpha: 1), #colorLiteral(red: 0.9062253833, green: 0.5326938629, blue: 0.8899034858, alpha: 1), #colorLiteral(red: 1, green: 0.4979843497, blue: 0.7015436292, alpha: 1), #colorLiteral(red: 0.1904207468, green: 0.8199267983, blue: 0.7703630328, alpha: 1)]
     var arrayDate = ["May 21, 2020", "May 21, 2020", "May 21, 2020", "May 21, 2020", "May 21, 2020", "May 21, 2020", "Sep 2020"]
     
@@ -43,6 +43,7 @@ class NoteHomeVC: UIViewController {
     
     @IBAction func didTapFloatingBtn(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "NoteCreationVC") as! NoteCreationVC
+        vc.modelNoteModelElement = modelNoteModelElement
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -52,17 +53,17 @@ class NoteHomeVC: UIViewController {
 extension NoteHomeVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (modelNoteModelElement != nil) ? (modelNoteModelElement.count) : 0
+        return modelNoteModelElement.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoteHomeCollectionCell", for: indexPath) as! NoteHomeCollectionCell
             
-        let item_ = modelNoteModelElement?[indexPath.item]
+        let item_ = modelNoteModelElement[indexPath.item]
         
-        cell.lblHeading.text = item_?.title
+        cell.lblHeading.text = item_.title
         cell.viewBg.backgroundColor = self.arrayColor[indexPath.row % self.arrayColor.count]
-        cell.lblDate.text = item_?.time
+        cell.lblDate.text = item_.time
         return cell
     }
         
@@ -85,9 +86,9 @@ extension NoteHomeVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let item_ = modelNoteModelElement?[indexPath.item]
+        let item_ = modelNoteModelElement[indexPath.item]
         
-        if item_?.image == nil {
+        if item_.image == nil {
             print("No Image ----> Show like Box")
             let padding: CGFloat = 25
             let collectionCellSize = collectionVwNotes.frame.size.width - padding
@@ -117,7 +118,7 @@ extension NoteHomeVC: DelegateNote {
     func successNoteObj(resObj: [NoteModelElement]) {
         saveUserData(resObj)
         showUserData()
-        modelNoteModelElement = resObj
+        modelNoteModelElement.append(contentsOf: resObj)
         collectionVwNotes.reloadData()
     }
 
@@ -130,7 +131,7 @@ extension NoteHomeVC: DelegateNote {
             newUser.id = user.id
             newUser.title = user.title
             newUser.body = user.body
-            newUser.time = user.time ?? ""
+            newUser.time = user.time
             newUser.image = user.image
         }
         do {
@@ -154,7 +155,6 @@ extension NoteHomeVC: DelegateNote {
         do {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
-
 
                 let userName = data.value(forKey: "id") as! String
 
