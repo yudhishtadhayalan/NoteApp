@@ -18,7 +18,9 @@ class NoteCreationVC: UIViewController {
     
     var imagePicker = UIImagePickerController()
     var imagee = UIImage()
-    
+    var modelNoteModelElement = [NoteModelElement]()
+    var titleText = ""
+    var bodyText = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
@@ -136,8 +138,16 @@ class NoteCreationVC: UIViewController {
     @IBAction func didTapSave(_ sender: UIButton) {
         self.view.endEditing(true)
         let alert = UIAlertController(title: "Your note has been saved", message: "", preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK", style: .default) { (obj) in
+        let okButton = UIAlertAction(title: "OK", style: .default) { [self] (obj) in
+            var modelNoteElement = NoteModelElement()
+            modelNoteElement.body = bodyText
+            modelNoteElement.id = "2"
+            modelNoteElement.title = titleText
+            modelNoteElement.time = "12"
+            modelNoteElement.image = "dsds"
+            self.modelNoteModelElement.append(modelNoteElement)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "NoteHomeVC") as! NoteHomeVC
+            vc.modelNoteModelElement = self.modelNoteModelElement
             self.navigationController?.pushViewController(vc, animated: true)
         }
         alert.addAction(okButton)
@@ -222,6 +232,7 @@ extension NoteCreationVC : UINavigationControllerDelegate,UIImagePickerControlle
 extension NoteCreationVC: ExpandingTableViewTitleCellDelegate {
     // Expanding teable view cell delegate
     func didChangeText(text: String?, cell: NoteCreationTitleCell) {
+        titleText = text ?? ""
         tblOutlet.beginUpdates()
         tblOutlet.endUpdates()
     }
@@ -230,6 +241,7 @@ extension NoteCreationVC: ExpandingTableViewTitleCellDelegate {
 extension NoteCreationVC: ExpandingTableViewCellContentDelegate {
     // Expanding teable view cell delegate
     func didChangeText(text: String?, cell: NoteCreationContentCell) {
+        bodyText = text ?? ""
         tblOutlet.beginUpdates()
         tblOutlet.endUpdates()
     }
