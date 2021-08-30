@@ -233,30 +233,35 @@
                                             <outlet property="lblHeading" destination="WpY-Sk-nDI" id="tgv-HQ-0Zi"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoteDetailTableCell" rowHeight="74" id="qnA-Qd-Lyb" customClass="NoteDetailTableCell" customModule="Notes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="130.33333396911621" width="414" height="74"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoteDetailTableCell" rowHeight="490" id="qnA-Qd-Lyb" customClass="NoteDetailTableCell" customModule="Notes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="134" width="414" height="490"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qnA-Qd-Lyb" id="wIu-Nf-R5o">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="490"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scW-se-GXn">
-                                                    <rect key="frame" x="20" y="25" width="374" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ogl-J8-x7F">
+                                                    <rect key="frame" x="20" y="31" width="374" height="448"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="3ur-B1-Heu" id="H4j-t7-URK"/>
+                                                    </connections>
+                                                </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="scW-se-GXn" firstAttribute="leading" secondItem="wIu-Nf-R5o" secondAttribute="leading" constant="20" id="6Y4-9Z-oyc"/>
-                                                <constraint firstAttribute="trailing" secondItem="scW-se-GXn" secondAttribute="trailing" constant="20" id="Mwf-4b-P57"/>
-                                                <constraint firstItem="scW-se-GXn" firstAttribute="top" secondItem="wIu-Nf-R5o" secondAttribute="top" constant="25" id="ZL9-Ev-yPl"/>
-                                                <constraint firstAttribute="bottom" secondItem="scW-se-GXn" secondAttribute="bottom" constant="25" id="rBH-W9-rdD"/>
+                                                <constraint firstItem="ogl-J8-x7F" firstAttribute="leading" secondItem="wIu-Nf-R5o" secondAttribute="leading" constant="20" id="Ozy-71-A0A"/>
+                                                <constraint firstItem="ogl-J8-x7F" firstAttribute="top" secondItem="wIu-Nf-R5o" secondAttribute="top" constant="31" id="Pfn-Ks-sLX"/>
+                                                <constraint firstAttribute="bottom" secondItem="ogl-J8-x7F" secondAttribute="bottom" constant="11" id="ZQE-LV-GLg"/>
+                                                <constraint firstAttribute="trailing" secondItem="ogl-J8-x7F" secondAttribute="trailing" constant="20" id="qUm-FB-Oz3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <outlet property="lblContent" destination="scW-se-GXn" id="5EK-ib-9AX"/>
+                                            <outlet property="textView" destination="ogl-J8-x7F" id="p3F-cs-v6v"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -507,6 +512,9 @@
         <image name="detail_Image" width="432.66665649414062" height="176"/>
         <image name="paperclip" catalog="system" width="121" height="128"/>
         <image name="placeHolder" width="266.66665649414062" height="180"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

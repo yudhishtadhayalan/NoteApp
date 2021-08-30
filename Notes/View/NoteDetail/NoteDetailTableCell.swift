@@ -10,6 +10,8 @@ import UIKit
 class NoteDetailTableCell: UITableViewCell {
     
     @IBOutlet weak var lblContent: UILabel!
+    @IBOutlet weak var textView: UITextView!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()

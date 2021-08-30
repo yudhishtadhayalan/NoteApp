@@ -31,12 +31,10 @@ class NoteCreationVC: UIViewController {
         
         if imageViewOutlet.image == nil {
             imageViewOutlet.isHidden = true
-//            ImgVwPlaceHolder.isHidden = false
             layoutImage.constant = 0
             btnPin.backgroundColor = #colorLiteral(red: 0.1097887084, green: 0.1098116413, blue: 0.1097855791, alpha: 1)
         } else {
             imageViewOutlet.isHidden = false
-//            ImgVwPlaceHolder.isHidden = true
             layoutImage.constant = 150
             btnPin.backgroundColor = .green
         }
@@ -110,7 +108,6 @@ class NoteCreationVC: UIViewController {
         
         let removePhoto = UIAlertAction(title: "Remove Photo", style: .default) { (obj) in
             print("Remove Button")
-//            self.imageViewOutlet.image = #imageLiteral(resourceName: "placeholder")
             self.layoutImage.constant = 0
             self.btnPin.backgroundColor = #colorLiteral(red: 0.1097887084, green: 0.1098116413, blue: 0.1097855791, alpha: 1)
         }
@@ -179,7 +176,6 @@ extension NoteCreationVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        tableView.rowHeight = UITableView.automaticDimension
         return UITableView.automaticDimension
     }
     
@@ -221,12 +217,10 @@ extension NoteCreationVC : UINavigationControllerDelegate,UIImagePickerControlle
         
         if imageViewOutlet.image == nil {
             imageViewOutlet.isHidden = true
-//            ImgVwPlaceHolder.isHidden = false
             layoutImage.constant = 0
             btnPin.backgroundColor = #colorLiteral(red: 0.1097887084, green: 0.1098116413, blue: 0.1097855791, alpha: 1)
         } else {
             imageViewOutlet.isHidden = false
-//            ImgVwPlaceHolder.isHidden = true
             layoutImage.constant = 150
             btnPin.backgroundColor = .green
         }
